@@ -265,4 +265,4 @@ paket-files/
 __pycache__/
 *.pyc
 
-
+!*/Microangelo/MicroangeloWeb/Views/Web.Config #Except for views web.config
