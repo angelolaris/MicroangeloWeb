@@ -10,6 +10,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -23,7 +26,6 @@ bld/
 [Ll]og/
 [Mm]edia/
 [Aa]pp_Data/
-[Aa]pp_Browsers/
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -265,5 +267,9 @@ paket-files/
 __pycache__/
 *.pyc
 
-!*/Microangelo/MicroangeloWeb/Views/Web.Config #Except for views web.config
 
+![Vv]iews/Web.Config #Except for views web.config
+![Bbin]/USNStarterKit.dll
+![Bbin]/USNInstaller.dll
+![Bbin]/PackageGarden.Licensing.dll
+!MicroangeloWeb\Umbraco\Views\media\emptyrecyclebin.html
