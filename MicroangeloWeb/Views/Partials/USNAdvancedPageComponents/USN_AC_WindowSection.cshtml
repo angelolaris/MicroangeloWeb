@@ -36,29 +36,27 @@
     int totalItemCount = Model.Children.Count(x => x.IsDocumentType(Usn_Ac_WindowSectionImage.ModelTypeAlias)  || x.IsDocumentType(Usn_Ac_WindowSectionVideo.ModelTypeAlias));
 
     <section class="content apc pod-windows @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">
-                            
-        @{
-            if (Model.IntroductionHeading != null || Model.IntroductionText.HasValue())
-            {
-                <div class="container">
-                    <!-- ROW - OVERVIEW -->
-                    <div class="row overview @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s">
-                        <div class="col-md-8 col-xs-12">
-                            @if (Model.IntroductionHeading != null)
-                            {
-                                @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.IntroductionHeading.HeadingTag, settings.HeadingStyle, Model.IntroductionHeading.Text))
-                            }
-                            @if (Model.IntroductionText.HasValue())
-                            {
-                                <div class="text @settings.TextStyle">
-                                    @Html.Raw(Model.IntroductionText)
-                                </div>
-                            }
-                        </div>
+                                   
+        @if (Model.IntroductionHeading != null || Model.IntroductionText.HasValue())
+        {
+            <div class="container">
+                <!-- ROW - OVERVIEW -->
+                <div class="row overview @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0s">
+                    <div class="col-md-8 col-xs-12">
+                        @if (Model.IntroductionHeading != null)
+                        {
+                            @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.IntroductionHeading.HeadingTag, settings.HeadingStyle, Model.IntroductionHeading.Text))
+                        }
+                        @if (Model.IntroductionText.HasValue())
+                        {
+                            <div class="text @settings.TextStyle">
+                                @Html.Raw(Model.IntroductionText)
+                            </div>
+                        }
                     </div>
-                    <!--// ROW - OVERVIEW -->
                 </div>
-            }
+                <!--// ROW - OVERVIEW -->
+            </div>
         }
 
 		<div class="@containerClass">
@@ -334,7 +332,7 @@
             }
 
         </div>
-
+		
         @{
             RelatedLinks outroLinks = Model.OutroLinks;
 

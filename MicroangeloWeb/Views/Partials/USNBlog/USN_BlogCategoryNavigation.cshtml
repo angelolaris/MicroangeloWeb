@@ -8,9 +8,9 @@
     if (categoryFolder != null && categoryFolder.Children.Any())
     {
     <!-- SUB - FILTER -->
-    <nav class="sub filter categories has-borders c6-borders">
-    <p class="heading inner">@umbraco.library.GetDictionaryItem("USN Blog Categories")</p>
-        <div class="inner">
+    <nav class="sub filter categories">
+    <p class="heading">@umbraco.library.GetDictionaryItem("USN Blog Categories")</p>
+        <div class="inner no-padding has-borders c6-borders">
             @Traverse(categoryFolder)
         </div>
     </nav>

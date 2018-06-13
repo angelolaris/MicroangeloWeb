@@ -92,7 +92,7 @@
                                 @if (item.HasValue("pageListingImage") && item.GetPropertyValue<IPublishedContent>("pageListingImage") != null)
                                 {
                                     <div class="image">
-                                        <img class="lazyload" src="@(item.GetPropertyValue<Image>("pageListingImage").GetCropUrl(cropAlias: "400x300", width: 4, height: 3))" data-src="@(item.GetPropertyValue<Image>("pageListingImage").GetCropUrl(cropAlias: "400x300"))" alt="@(item.GetPropertyValue<string>("pageListingImageAltText"))">
+                                        <img class="lazyload" src="@(item.GetPropertyValue<Image>("pageListingImage").GetCropUrl(width: 4, height: 3))" data-src="@(item.GetPropertyValue<Image>("pageListingImage").GetCropUrl(width: 400, height: 300))" alt="@(item.GetPropertyValue<string>("pageListingImageAltText"))">
                                     </div>
                                 }
                                 <p class="heading">@Html.Raw(pageName)</p>

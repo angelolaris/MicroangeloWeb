@@ -72,6 +72,7 @@
         if (totalNodes == 0)
         {
             <p>@umbraco.library.GetDictionaryItem("USN Search Results Nothing Found")</p>
+			@Html.Partial("USNForms/USN_SearchForm", Model)
         }
         else
         {
@@ -84,6 +85,7 @@
                 searchResultsFeedback = String.Format(searchResultsFeedback, originalSearchTerm, totalNodes);
 
                 <p>@Html.Raw(searchResultsFeedback)</p>
+				@Html.Partial("USNForms/USN_SearchForm", Model)
             }
             <div class="listing search">
                 @foreach (var item in nodes.Skip((page - 1) * pageSize).Take(pageSize))

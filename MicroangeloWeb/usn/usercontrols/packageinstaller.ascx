@@ -6,7 +6,7 @@
                 <img alt="uSkinned" src="https://uskinned.net/images/package-icon.png">
             </div>
             <div class="umb-package-info">
-                <h4 class="umb-info-local-item"><strong>uSkinned Source Starter Kit Successfully Installed</strong></h4>
+                <h4 class="umb-info-local-item"><strong>uSkinned Harvest Starter Kit Successfully Installed</strong></h4>
                 <div class="umb-info-local-item">
                     <p><strong>The installer has setup demo pages to get you started.</strong></p>
                     <p><strong>This will help you to understand how the different layouts and components available with your theme can be created via the Umbraco CMS.</strong></p>

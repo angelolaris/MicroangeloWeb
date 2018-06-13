@@ -91,7 +91,7 @@
 		// BANNER ITSELF
       	$(".banner .slides").slick({
 			arrows: true,
-			dots: true,
+			dots: false,
 			infinite: true,
 			speed: 600,
 			fade: true,
@@ -133,7 +133,7 @@
 			arrows: true,
 			prevArrow: '<div class="slick-prev"><i class="ion-chevron-left"></i>',
 			nextArrow: '<div class="slick-next"><i class="ion-chevron-right"></i>',
-			dots: true,
+			dots: false,
 			infinite: true,
 			speed: 600,
 			easing: 'linear',

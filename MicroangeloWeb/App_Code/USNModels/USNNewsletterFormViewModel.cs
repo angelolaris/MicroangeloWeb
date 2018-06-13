@@ -16,7 +16,7 @@ namespace USNStarterKit.USNModels
 
         public int CurrentNodeID { get; set; }
 
-        public int GlobalSettingsID { get; set;}
+        public int GlobalSettingsID { get; set; }
     }
 
 }

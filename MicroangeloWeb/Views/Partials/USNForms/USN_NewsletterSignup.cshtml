@@ -16,7 +16,7 @@
     var containerId = "NewsletterSignupContainer" + Model.CurrentNodeID;
     var errorId = "NewsletterError" + Model.CurrentNodeID;
     var ajaxLoadingId = "NewsletterAjaxLoading" + Model.CurrentNodeID;
-    
+
     UsnglobalSettings globalSettings = (UsnglobalSettings)Umbraco.TypedContent(Model.GlobalSettingsID);
 
     if (globalSettings.EmailMarketingPlatform.HasValue() && globalSettings.NewsletterApikey.HasValue() && (currentNode.HasValue("newsletterSubscriberListID") || globalSettings.DefaultNewsletterSubscriberListID.HasValue()))
@@ -40,7 +40,7 @@
         }
 
         <div class="newsletter form ajax-wrap">
-            <div class="inner c4-bg has-borders c6-borders">
+            <div class="inner c5-bg has-borders c6-borders">
 
                 @{
                     var newsletterHeading = currentNode.GetPropertyValue<USNHeading>("newsletterHeading");

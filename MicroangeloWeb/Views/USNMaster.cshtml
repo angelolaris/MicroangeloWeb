@@ -18,6 +18,7 @@
     @Html.Partial("USNWebsiteHeadSection/USN_SEOPageHead", Model)
 
     <!-- WEB FONT -->
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300italic,300,400italic,700,700italic,900,900italic|Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 
@@ -94,8 +95,6 @@
 
                             @Html.Partial("USNNavigation/USN_MainNavigation", Model)
 
-                            @Html.Partial("USNForms/USN_SearchForm", Model)
-
                             @Html.Partial("USNNavigation/USN_SecondaryNavigation", Model)
 
                         </div>
@@ -128,17 +127,21 @@
             <div class="container">
                 <!-- ROW -->
                 <div class="row">
+	
+                    <div class="col-md-4 col-xs-12">
+                        @Html.Partial("USNNavigation/USN_FooterQuickLinks", Model)
+                    </div>
+
                     <div class="col-md-4 col-xs-12">
                         <!-- COMPANY DETAILS -->
                         @Html.Partial("USNMiscPageElements/USN_ContactInformation")
                         <!--// COMPANY DETAILS -->
                     </div>
+
                     <div class="col-md-4 col-xs-12">
-                        @Html.Partial("USNNavigation/USN_FooterQuickLinks", Model)
-                    </div>
-                    <div class="col-md-3 col-md-offset-1 col-xs-12">
                         @Html.Partial("USNNavigation/USN_SocialLinks", Model)
                     </div>
+
                 </div>
                 <!--// ROW -->
                 <!-- ROW -->
@@ -148,7 +151,7 @@
                             <ul>
                                 <li class="copyright"><div>&copy; @DateTime.Now.ToString("yyyy")</div></li>
                                 @Html.Partial("USNNavigation/USN_FooterNavigation", Model)
-                                <li class="site-credit pull-right">
+                                <li class="site-credit">
                                     <div>a premium Umbraco theme from</div>
                                     <a target="_blank" title="Link will open in a new window/tab" href="http://www.uskinned.net"><span>uSkinned</span></a>
                                 </li>

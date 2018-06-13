@@ -11,13 +11,13 @@
 		{
 		
 		<!-- SUB -->
-		<nav class="sub has-borders c6-borders">
-			<p class="heading inner">
+		<nav class="sub">
+			<p class="heading">
 				<a href="@parent.Url()">
 				    @(parent.HasValue("subNavigationLinkText") ? parent.GetPropertyValue<string>("subNavigationLinkText") : parent.Name)
 				</a>
 			</p>
-            <div class="inner">
+            <div class="inner no-padding has-borders c6-borders">
                 @Traverse(parent)
             </div>
 		</nav>

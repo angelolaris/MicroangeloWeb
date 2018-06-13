@@ -28,10 +28,10 @@
     if (yearNavigation.Any())
     {
         <!-- SUB - FILTER -->
-        <nav class="sub filter has-borders c6-borders">
-            <p class="heading inner"><a href="@landing.Url">@umbraco.library.GetDictionaryItem("USN Blog All Posts")</a>
+        <nav class="sub filter">
+            <p class="heading"><a href="@landing.Url">@umbraco.library.GetDictionaryItem("USN Blog All Posts")</a>
             </p>
-            <div class="inner">
+            <div class="inner no-padding has-borders c6-borders">
                 <ul>
                     @foreach (var yearNav in yearNavigation)
                     {

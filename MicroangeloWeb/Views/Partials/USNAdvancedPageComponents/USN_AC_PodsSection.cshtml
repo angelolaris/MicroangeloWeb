@@ -6,7 +6,6 @@
 @using USNStarterKit.USNEntities;
 
 @{
-
     string animateClass = String.Empty;
 
     if (Model.Animate)
@@ -49,10 +48,10 @@
                 <!--// ROW - OVERVIEW -->
                 }
             }
-
             @if (Model.Children<Usn_Ac_Pod>().Any())
             {
             <div class="row @rowStyle">
+
                 @foreach (Usn_Ac_Pod pod in Model.Children<Usn_Ac_Pod>())
                 {
                     USNLink podLink = USNUrlHelper.GetLinkFromRelatedLinks(pod.PodLink);
@@ -60,7 +59,7 @@
                     if (rowStyle == String.Empty)
                     {
 
-                    <div class="item col-lg-3 col-sm-6 col-xs-12 @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                    <div class="item col-md-4 col-sm-6 col-xs-12 @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
                         @if (podLink.LinkURL.HasValue())
                         {
                             @:<a href="@podLink.LinkURL" @Html.Raw(podLink.LinkTitle)  @Html.Raw(podLink.LinkTarget)>
@@ -95,7 +94,7 @@
                     }
                     else
                     {
-                    <div class="item col-lg-3 col-sm-6 col-xs-12 @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
+                    <div class="item col-md-4 col-sm-6 col-xs-12 @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0.1s">
 
                         @if (podLink.LinkURL.HasValue())
                         {
@@ -134,7 +133,6 @@
                 }
             </div>
             }
-
             @{
                 RelatedLinks outroLinks = Model.OutroLinks;
 
@@ -169,5 +167,4 @@
             }
         </div>
     </section>
-    
 }

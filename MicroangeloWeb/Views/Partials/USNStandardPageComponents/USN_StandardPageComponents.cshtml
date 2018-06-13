@@ -46,7 +46,7 @@
                     break;
                 case Usn_Sc_ContactForm_AN.ModelTypeAlias:
                     <div class="spc forms" id="pos_@Html.Raw(component.Id)">
-                        @Html.Action("Index", "USNContactFormSurface", new { NodeID = component.Id, GlobalSettingsID = Model.GlobalSettings.Id })
+                       @Html.Action("Index", "USNContactFormSurface", new { NodeID = component.Id, GlobalSettingsID = Model.GlobalSettings.Id })
                     </div>
                     break;
             }

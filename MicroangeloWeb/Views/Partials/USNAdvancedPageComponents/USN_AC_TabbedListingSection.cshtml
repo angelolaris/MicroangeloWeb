@@ -48,14 +48,15 @@
                 RelatedLinks listingPages = Model.LinkToListings;
 
                 if (listingPages != null && listingPages.Any())
-                {                
+                {
+
                     int pagesDisplayCount = 0;
 
                     if (listingPages != null && Model.PagesToDisplay.HasValue())
                     {
                         pagesDisplayCount = Model.PagesToDisplay;
                     }
-                
+
                     int listPage = 1;
 
                     if (listingPages.Count() > 1)

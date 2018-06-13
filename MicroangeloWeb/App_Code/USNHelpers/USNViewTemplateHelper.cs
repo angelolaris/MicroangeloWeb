@@ -15,39 +15,39 @@ namespace USNStarterKit.USNHelpers
             {
                 switch (backgroundColor)
                 {
-                    case "ed6d19":
+                    case "ec6642":
                         settings.BackGroundStyle = "c1-bg";
                         settings.HeadingStyle = "c5-text";
                         settings.TextStyle = "c5-text";
                         break;
-                    case "cccccc":
+                    case "ffb400":
                         settings.BackGroundStyle = "c2-bg";
                         settings.HeadingStyle = "c3-text";
                         settings.TextStyle = String.Empty;
                         break;
-                    case "181818":
+                    case "16100f":
                         settings.BackGroundStyle = "c3-bg";
                         settings.HeadingStyle = "c5-text";
                         settings.TextStyle = "c5-text";
                         break;
-                    case "f4f4f4":
+                    case "fff3e8":
                         settings.BackGroundStyle = "c4-bg";
-                        settings.HeadingStyle = "c3-text";
+                        settings.HeadingStyle = "c1-text";
                         settings.TextStyle = String.Empty;
                         break;
                     case "ffffff":
                         settings.BackGroundStyle = "c5-bg";
-                        settings.HeadingStyle = "c3-text";
+                        settings.HeadingStyle = "c1-text";
                         settings.TextStyle = String.Empty;
                         break;
-                    case "e3e3e3":
+                    case "e8e5e3":
                         settings.BackGroundStyle = "c6-bg";
-                        settings.HeadingStyle = "c3-text";
+                        settings.HeadingStyle = "c1-text";
                         settings.TextStyle = String.Empty;
                         break;
                     default:
                         settings.BackGroundStyle = "c5-bg";
-                        settings.HeadingStyle = "c3-text";
+                        settings.HeadingStyle = "c1-text";
                         settings.TextStyle = String.Empty;
                         break;
                 }
@@ -55,7 +55,7 @@ namespace USNStarterKit.USNHelpers
             else
             {
                 settings.BackGroundStyle = "c5-bg";
-                settings.HeadingStyle = "c3-text";
+                settings.HeadingStyle = "c1-text";
                 settings.TextStyle = String.Empty;
             }
 
@@ -63,22 +63,22 @@ namespace USNStarterKit.USNHelpers
             {
                 switch (buttonColour)
                 {
-                    case "ed6d19":
+                    case "ec6642":
                         settings.ButtonStyle = "c1-bg c5-text";
                         break;
-                    case "cccccc":
-                        settings.ButtonStyle = "c2-bg c3-text";
+                    case "ffb400":
+                        settings.ButtonStyle = "c2-bg c5-text";
                         break;
-                    case "181818":
+                    case "16100f":
                         settings.ButtonStyle = "c3-bg c5-text";
                         break;
-                    case "f4f4f4":
+                    case "fff3e8":
                         settings.ButtonStyle = "c4-bg c1-text";
                         break;
                     case "ffffff":
                         settings.ButtonStyle = "c5-bg c1-text";
                         break;
-                    case "e3e3e3":
+                    case "e8e5e3":
                         settings.ButtonStyle = "c6-bg c3-text";
                         break;
                     default:
