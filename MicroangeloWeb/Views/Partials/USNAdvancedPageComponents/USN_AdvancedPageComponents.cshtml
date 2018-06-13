@@ -1,5 +1,5 @@
 ﻿@inherits UmbracoViewPage<USNStarterKit.USNModels.USNBaseViewModel>
-	
+
 @using USNStarterKit.USNBackgroundOptions.Models
 @using USNStarterKit.USNHelpers;
 @using USNStarterKit.USNEntities;
@@ -16,7 +16,7 @@
             USNTemplateStyleSettings settings = USNViewTemplateHelper.GetTemplateStyleSettings(component.GetPropertyValue<string>("backgroundColor"));
 
             string backgroundImageStyle = USNViewTemplateHelper.GetBackgroundImageStyle(component.GetPropertyValue<IPublishedContent>("backgroundImage"), component.GetPropertyValue<USNBackgroundOption>("backgroundImageOptions"));
-    
+
             string animateClass = String.Empty;
 
             if (component.GetPropertyValue<bool>("animate"))
@@ -28,13 +28,14 @@
             switch (component.DocumentTypeAlias)
             {
                 case Usn_Ac_BannerSection_AN.ModelTypeAlias:
-                    @Html.Partial("USNAdvancedPageComponents/USN_AC_BannerSection", (Usn_Ac_BannerSection_AN) component)
+                    Html.RenderPartial("USNAdvancedPageComponents/USN_AC_BannerSection", (Usn_Ac_BannerSection_AN)component);
                     break;
+                    <!--Html.Partial("USNAdvancedPageComponents/USN_AC_BannerSection", (Usn_Ac_BannerSection_AN)component)-->
                 case Usn_Ac_PodsSection_AN.ModelTypeAlias:
-                    @Html.Partial("USNAdvancedPageComponents/USN_AC_PodsSection", (Usn_Ac_PodsSection_AN) component)
+                    @Html.Partial("USNAdvancedPageComponents/USN_AC_PodsSection", (Usn_Ac_PodsSection_AN)component)
                     break;
                 case Usn_Ac_GridLayoutSection_AN.ModelTypeAlias:
-                    @Html.Partial("USNAdvancedPageComponents/USN_AC_GridLayoutSection", (Usn_Ac_GridLayoutSection_AN) component)
+                    @Html.Partial("USNAdvancedPageComponents/USN_AC_GridLayoutSection", (Usn_Ac_GridLayoutSection_AN)component)
                     break;
                 case Usn_Ac_TextSignupSection_AN.ModelTypeAlias:
                     @Html.Action("TextSignup", "USNNewsletterSignupSurface", new { NodeID = component.Id, GlobalSettingsID = Model.GlobalSettings.Id })
@@ -43,28 +44,28 @@
                     @Html.Action("SubpageSignup", "USNNewsletterSignupSurface", new { NodeID = component.Id, GlobalSettingsID = Model.GlobalSettings.Id })
                     break;
                 case Usn_Ac_TextVideoOrImageSection_AN.ModelTypeAlias:
-                    @Html.Partial("USNAdvancedPageComponents/USN_AC_TextVideoOrImageSection", (Usn_Ac_TextVideoOrImageSection_AN) component)
+                    @Html.Partial("USNAdvancedPageComponents/USN_AC_TextVideoOrImageSection", (Usn_Ac_TextVideoOrImageSection_AN)component)
                     break;
                 case Usn_Ac_Ctastrip_AN.ModelTypeAlias:
-                    @Html.Partial("USNAdvancedPageComponents/USN_AC_CTAStrip", (Usn_Ac_Ctastrip_AN) component)
+                    @Html.Partial("USNAdvancedPageComponents/USN_AC_CTAStrip", (Usn_Ac_Ctastrip_AN)component)
                     break;
                 case Usn_Ac_FeaturedBlogPostsSection_AN.ModelTypeAlias:
-                    @Html.Partial("USNAdvancedPageComponents/USN_AC_FeaturedBlogPostsSection", (Usn_Ac_FeaturedBlogPostsSection_AN) component)
+                    @Html.Partial("USNAdvancedPageComponents/USN_AC_FeaturedBlogPostsSection", (Usn_Ac_FeaturedBlogPostsSection_AN)component)
                     break;
                 case Usn_Ac_CarouselSection_AN.ModelTypeAlias:
-                    @Html.Partial("USNAdvancedPageComponents/USN_AC_CarouselSection", (Usn_Ac_CarouselSection_AN) component)
+                    @Html.Partial("USNAdvancedPageComponents/USN_AC_CarouselSection", (Usn_Ac_CarouselSection_AN)component)
                     break;
                 case Usn_Ac_TabbedListingSection_AN.ModelTypeAlias:
-                    @Html.Partial("USNAdvancedPageComponents/USN_AC_TabbedListingSection", (Usn_Ac_TabbedListingSection_AN) component)
+                    @Html.Partial("USNAdvancedPageComponents/USN_AC_TabbedListingSection", (Usn_Ac_TabbedListingSection_AN)component)
                     break;
                 case Usn_Ac_WindowSection_AN.ModelTypeAlias:
-                    @Html.Partial("USNAdvancedPageComponents/USN_AC_WindowSection", (Usn_Ac_WindowSection_AN) component)
+                    @Html.Partial("USNAdvancedPageComponents/USN_AC_WindowSection", (Usn_Ac_WindowSection_AN)component)
                     break;
                 case Usn_Sc_AccordionTabSection_AN.ModelTypeAlias:
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_AccordionTabSection", (Usn_Sc_AccordionTabSection_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_AccordionTabSection", (Usn_Sc_AccordionTabSection_AN)component)
                             </div>
                         </div>
                     </section>
@@ -73,7 +74,7 @@
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_ResourcesSection", (Usn_Sc_ResourcesSection_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_ResourcesSection", (Usn_Sc_ResourcesSection_AN)component)
                             </div>
                         </div>
                     </section>
@@ -82,7 +83,7 @@
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_TextSection", (Usn_Sc_TextSection_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_TextSection", (Usn_Sc_TextSection_AN)component)
                             </div>
                         </div>
                     </section>
@@ -91,7 +92,7 @@
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_Alert", (Usn_Sc_Alert_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_Alert", (Usn_Sc_Alert_AN)component)
                             </div>
                         </div>
                     </section>
@@ -100,7 +101,7 @@
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_LinksSection", (Usn_Sc_LinksSection_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_LinksSection", (Usn_Sc_LinksSection_AN)component)
                             </div>
                         </div>
                     </section>
@@ -109,7 +110,7 @@
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_GallerySection", (Usn_Sc_GallerySection_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_GallerySection", (Usn_Sc_GallerySection_AN)component)
                             </div>
                         </div>
                     </section>
@@ -118,7 +119,7 @@
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_Blockquote", (Usn_Sc_Blockquote_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_Blockquote", (Usn_Sc_Blockquote_AN)component)
                             </div>
                         </div>
                     </section>
@@ -127,7 +128,7 @@
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_CodeSection", (Usn_Sc_CodeSection_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_CodeSection", (Usn_Sc_CodeSection_AN)component)
                             </div>
                         </div>
                     </section>
@@ -136,7 +137,7 @@
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_SlideshowSection", (Usn_Sc_SlideshowSection_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_SlideshowSection", (Usn_Sc_SlideshowSection_AN)component)
                             </div>
                         </div>
                     </section>
@@ -148,7 +149,7 @@
                                 @Html.Action("Index", "USNNewsletterSignupSurface", new { NodeID = component.Id, GlobalSettingsID = Model.GlobalSettings.Id })
                             </div>
                         </div>
-                    </section>   
+                    </section>
                     break;
                 case Usn_Sc_ContactForm_AN.ModelTypeAlias:
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
@@ -163,7 +164,7 @@
                     <section class="content apc standard-components @(component.GetPropertyValue<string>("customComponentClasses")) @settings.BackGroundStyle" @Html.Raw(backgroundImageStyle) id="@Html.Raw("pos_" + component.Id)">
                         <div class="container @animateClass" data-os-animation="fadeIn" data-os-animation-delay="0">
                             <div class="row">
-                                @Html.Partial("USNStandardPageComponents/USN_SC_PriceListSection", (Usn_Sc_PriceListSection_AN) component)
+                                @Html.Partial("USNStandardPageComponents/USN_SC_PriceListSection", (Usn_Sc_PriceListSection_AN)component)
                             </div>
                         </div>
                     </section>

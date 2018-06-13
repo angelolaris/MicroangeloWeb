@@ -376,7 +376,6 @@
     <Content Include="config\ClientDependency.config" />
     <Content Include="App_Browsers\Form.browser" />
     <Content Include="App_Browsers\w3cvalidator.browser" />
-    <Content Include="images\bg\Thumbs.db" />
     <Content Include="images\icons\Thumbs.db" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -529,6 +528,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\bg\" />
     <Folder Include="Models\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
