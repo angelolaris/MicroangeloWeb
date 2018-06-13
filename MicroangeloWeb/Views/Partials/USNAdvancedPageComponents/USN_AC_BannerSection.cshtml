@@ -4,6 +4,7 @@
     @using USNStarterKit.USNModels;
     @using USNStarterKit.USNHelpers;
     @using USNStarterKit.USNEntities;
+    @using USNStarterKit.USNHeading.Models;
     @using Umbraco.Web.Models;
 
     @{
@@ -98,110 +99,113 @@
     USNLink bannerLink = USNUrlHelper.GetLinkFromRelatedLinks(banner.BannerLink);
 
     var typedBannerRelatedLinks = (RelatedLinks)banner.BannerLink;
-    //var bannerProperties = new Dictionary<string, Umbraco.Core.Models.IPublishedProperty>
+
     var bannerHeading = banner.GetPropertyValue<USNHeading>("bannerHeading");
 
+    //var bannerProperties = new Dictionary<string, Umbraco.Core.Models.IPublishedProperty>
+    //var bannerHeading = banner.GetPropertyValue<USNHeading>("bannerHeading");
+    //bannerHeading = Model.Content.GetPropertyValue<USNHeading>("bannerHeading");
 
-        if (typedBannerRelatedLinks == null)
-        {
-        linkLink = String.Empty;
-        linkTarget = String.Empty;
-        linkCaption = String.Empty;
-        }
-        else
-        if (typedBannerRelatedLinks.Any())
-        {
-        linkLink = typedBannerRelatedLinks.First().Link;
-        linkTarget = (typedBannerRelatedLinks.First().NewWindow) ? "_blank" : null;
-        linkCaption = typedBannerRelatedLinks.First().Caption;
-        }
-        <div class="item @colorOverlayClass @bannerStyle @parallaxClass @settings.BackGroundStyle">
+                if (typedBannerRelatedLinks == null)
+                {
+                linkLink = String.Empty;
+                linkTarget = String.Empty;
+                linkCaption = String.Empty;
+                }
+                else
+                if (typedBannerRelatedLinks.Any())
+                {
+                linkLink = typedBannerRelatedLinks.First().Link;
+                linkTarget = (typedBannerRelatedLinks.First().NewWindow) ? "_blank" : null;
+                linkCaption = typedBannerRelatedLinks.First().Caption;
+                }
+                <div class="item @colorOverlayClass @bannerStyle @parallaxClass @settings.BackGroundStyle">
 
-            @if (banner.BannerImage != null)
-            {
-            <!-- IMAGE -->
-            <div class="image lazyload" @Html.Raw(bgImageSmall) data-bg="@bgImage">
+                    @if (banner.BannerImage != null)
+                    {
+                    <!-- IMAGE -->
+                    <div class="image lazyload" @Html.Raw(bgImageSmall) data-bg="@bgImage">
 
-            </div>
-            <!--// IMAGE -->
-            }
+                    </div>
+                    <!--// IMAGE -->
+                    }
 
-            @if (banner.Video != null)
-            {
-            <!-- VIDEO -->
-            <div class="video">
+                    @if (banner.Video != null)
+                    {
+                    <!-- VIDEO -->
+                    <div class="video">
 
-                <video playsinline autoplay muted loop preload width="640" height="360" class="video-player">
-                    <source src="@banner.Video.Url" type="video/mp4">
-                </video>
+                        <video playsinline autoplay muted loop preload width="640" height="360" class="video-player">
+                            <source src="@banner.Video.Url" type="video/mp4">
+                        </video>
 
-            </div>
-            <!--// VIDEO -->
-            }
+                    </div>
+                    <!--// VIDEO -->
+                    }
 
-            @if (banner.BannerHeading != null || banner.BannerText.HasValue() || bannerLink.LinkURL.HasValue())
-            {
-            string textAlignment;
+                    @if (banner.BannerHeading != null || banner.BannerText.HasValue() || bannerLink.LinkURL.HasValue())
+                    {
+                    string textAlignment;
 
-            switch (banner.BannerTextAlignment)
-            {
-            case "Left":
-            textAlignment = "col-md-8 col-sm-10 col-xs-12 text-left";
-            break;
-            case "Center":
-            textAlignment = "col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 text-center";
-            break;
-            case "Right":
-            textAlignment = "col-md-8 col-sm-10 col-xs-12 pull-right text-right";
-            break;
-            default:
-            textAlignment = "col-md-8 col-sm-10 col-xs-12 text-left";
-            break;
-            }
-            <div class="info">
-                <div class="container">
-                    <!-- ROW -->
-                    <div class="row">
+                    switch (banner.BannerTextAlignment)
+                    {
+                    case "Left":
+                    textAlignment = "col-md-8 col-sm-10 col-xs-12 text-left";
+                    break;
+                    case "Center":
+                    textAlignment = "col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 text-center";
+                    break;
+                    case "Right":
+                    textAlignment = "col-md-8 col-sm-10 col-xs-12 pull-right text-right";
+                    break;
+                    default:
+                    textAlignment = "col-md-8 col-sm-10 col-xs-12 text-left";
+                    break;
+                    }
+                    <div class="info">
+                        <div class="container">
+                            <!-- ROW -->
+                            <div class="row">
 
-                        <div class="table">
-                            <div class="table-cell">
+                                <div class="table">
+                                    <div class="table-cell">
 
-                                <div class="@textAlignment">
-                                    @if (banner.BannerHeading != null)
-                                    {
-                                    @Html.Raw(String.Format("<{0} class=\"heading main {1} {2}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.1s\">{3}</{0}>", bannerHeading.HeadingTag, settings.HeadingStyle, animateClass, bannerHeading.Text))
-                                    }
-                                    @if (banner.BannerText.HasValue())
-                                    {
-                                    <div class="text @settings.TextStyle @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.2s">
-                                        @Html.Raw(banner.BannerText)
+                                        <div class="@textAlignment">
+                                            @if (banner.BannerHeading != null)
+                                            {
+                                            @Html.Raw(String.Format("<{0} class=\"heading main {1} {2}\" data-os-animation=\"fadeInUp\" data-os-animation-delay=\"0.1s\">{3}</{0}>", bannerHeading.HeadingTag, settings.HeadingStyle, animateClass, banner.Name))
+                                            }
+                                            @if (banner.BannerText.HasValue())
+                                            {
+                                            <div class="text @settings.TextStyle @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.2s">
+                                                @Html.Raw(banner.BannerText)
+                                            </div>
+                                            }
+                                            @if (bannerLink.LinkURL.HasValue())
+                                            {
+                                            <p class="link @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.3s">
+                                                <a class="btn @settings.ButtonStyle" href="@linkLink" @Html.Raw(linkTarget) @Html.Raw(bannerLink.LinkTitle)>@linkCaption@Html.Raw(bannerLink.LinkIcon)</a>
+                                            </p>
+                                            }
+                                        </div>
                                     </div>
-                                    }
-                                    @if (bannerLink.LinkURL.HasValue())
-                                    {
-                                    <p class="link @animateClass" data-os-animation="fadeInUp" data-os-animation-delay="0.3s">
-                                        <a class="btn @settings.ButtonStyle" href="@linkLink" @Html.Raw(linkTarget) @Html.Raw(bannerLink.LinkTitle)>@linkCaption@Html.Raw(bannerLink.LinkIcon)</a>
-                                    </p>
-                                    }
                                 </div>
                             </div>
+                            <!--// ROW -->
                         </div>
                     </div>
-                    <!--// ROW -->
+                    }
+                    @if (banner.ScrollPrompt)
+                    {
+                    <!-- SCROLL PROMPT -->
+                    <div class="scroll-prompt text-center">
+                        <a class="c5-text hidden-lg"><i class="ion-ios-arrow-down"></i></a>
+                        <a class="c5-text hidden-md hidden-sm hidden-xs"><div class="mouse-scroll"></div><span>@umbraco.library.GetDictionaryItem("USN Banner Component Scroll Prompt")</span></a>
+                    </div>
+                    <!--// SCROLL PROMPT -->
+                    }
                 </div>
-            </div>
-            }
-            @if (banner.ScrollPrompt)
-            {
-            <!-- SCROLL PROMPT -->
-            <div class="scroll-prompt text-center">
-                <a class="c5-text hidden-lg"><i class="ion-ios-arrow-down"></i></a>
-                <a class="c5-text hidden-md hidden-sm hidden-xs"><div class="mouse-scroll"></div><span>@umbraco.library.GetDictionaryItem("USN Banner Component Scroll Prompt")</span></a>
-            </div>
-            <!--// SCROLL PROMPT -->
-            }
-        </div>
-        }
+                }
 </div>
         </section>
         }

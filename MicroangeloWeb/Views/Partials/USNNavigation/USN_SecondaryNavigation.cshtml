@@ -20,10 +20,17 @@
                 {
                     USNLink topLink = USNUrlHelper.GetLinkFromRelatedLink(link);
 
+                    var linkLink = link.Link;
+                    var linkTarget = (link.NewWindow) ? "_blank" : null;
+                    var linkCaption = link.Caption;
+
+                    var InternalNode = link.Content;
+
+
                     if ((topLink.InternalNode != null && topLink.InternalNode.IsVisible()) || (topLink.LinkURL != String.Empty))
-                    { 
+                    {
                         <li>
-                            <a href="@topLink.LinkURL" @Html.Raw(topLink.LinkTarget) @Html.Raw(topLink.LinkTitle)>@topLink.LinkCaption@Html.Raw(topLink.LinkIcon)</a>      
+                            <a href="@topLink.LinkURL" @Html.Raw(linkTarget) @Html.Raw(topLink.LinkTitle)>@linkCaption@Html.Raw(topLink.LinkIcon)</a>      
                         </li>
                     }
                 }

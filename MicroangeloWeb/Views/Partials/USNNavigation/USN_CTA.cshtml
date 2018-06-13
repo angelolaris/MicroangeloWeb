@@ -9,8 +9,15 @@
 
     USNLink ctaLink = USNUrlHelper.GetLinkFromRelatedLinks(navigation.CtaLink);
 
+    var linkLink = navigation.CtaLink.First().Link;
+    var linkTarget = (navigation.CtaLink.First().NewWindow) ? "_blank" : null;
+    var linkCaption = navigation.CtaLink.First().Caption;
+
+    var InternalNode = navigation.CtaLink.First().Content;
+
+
     if (ctaLink.LinkURL.HasValue())
     {
-        <nav class="cta-link"><a class="btn c1-bg c5-text" href="@ctaLink.LinkURL" @Html.Raw(ctaLink.LinkTitle) @Html.Raw(ctaLink.LinkTarget)>@ctaLink.LinkCaption@Html.Raw(ctaLink.LinkIcon)</a></nav>
+        <nav class="cta-link"><a class="btn c1-bg c5-text" href="@ctaLink.LinkURL" @Html.Raw(ctaLink.LinkTitle) @Html.Raw(linkTarget)>@linkCaption@Html.Raw(ctaLink.LinkIcon)</a></nav>
     }
 }
