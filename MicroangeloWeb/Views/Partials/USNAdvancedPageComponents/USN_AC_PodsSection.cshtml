@@ -28,8 +28,8 @@
     <section class="content apc promo-pods @settings.BackGroundStyle @Model.CustomComponentClasses" @Html.Raw(backgroundImageStyle) id="pos_@Model.Id">
         <div class="container">
         @{
-            Model.GetPropertyValue<USNStarterKit.USNHeading.Models.USNHeading>("introductionHeading").Text.ToString();
-            Model.GetPropertyValue<USNStarterKit.USNHeading.Models.USNHeading>("introductionHeading").HeadingTag.ToString();
+            //Model.GetPropertyValue<USNStarterKit.USNHeading.Models.USNHeading>("introductionHeading").Text.ToString();
+            //Model.GetPropertyValue<USNStarterKit.USNHeading.Models.USNHeading>("introductionHeading").HeadingTag.ToString();
 
             if (Model.IntroductionHeading != null || Model.IntroductionText.HasValue())
             {
@@ -38,7 +38,7 @@
                     <div class="col-md-8 col-xs-12">
                         @if (Model.IntroductionHeading != null)
                         {
-                            @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.IntroductionHeading, settings.HeadingStyle, Model.IntroductionHeading))
+                            @Html.Raw(String.Format("<{0} class=\"heading main {1}\">{2}</{0}>", Model.GetPropertyValue<USNStarterKit.USNHeading.Models.USNHeading>("introductionHeading").HeadingTag.ToString(), settings.HeadingStyle, Model.GetPropertyValue<USNStarterKit.USNHeading.Models.USNHeading>("introductionHeading").Text.ToString()))
                         }
                         @if (Model.IntroductionText.HasValue())
                         {
